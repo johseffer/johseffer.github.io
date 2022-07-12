@@ -76,7 +76,7 @@ body {
 
 #terminal__body {
   background: rgba(56, 56, 56, 0.9);
-  font-family: 'Fira Mono';
+  /* font-family: 'Fira Mono'; */
   font-size: 14px ;
   height: calc(100% - 30px);
   padding: 15px;
