@@ -63,9 +63,9 @@
   </div>
   <main id="container">
 
-    <div id="terminal">
+    <div id="terminal" class="terminal">
       <!-- Terminal Bar -->
-      <section id="terminal__bar">
+      <section class="terminal__bar">
         <div id="bar__buttons">
           <button class="bar__button" id="bar__button--exit">&#10005;</button>
           <button class="bar__button">&#9472;</button>
@@ -74,42 +74,90 @@
         <p id="bar__user">johseffer@t1r4x: ~</p>
       </section>
       <!-- Terminal Body -->
-      <section id="terminal__body">
-        <div id="terminal__prompt">
-          <span id="terminal__prompt--location">johseffer</span>
-          <span id="terminal__prompt--at">@</span>
-          <span id="terminal__prompt--hostname">t1r4x</span>
-          <span id="terminal__prompt--location">~</span>
-          <span id="terminal__prompt--bling">$ whoami</span>
+      <section class="terminal__body">
+        <div class="terminal__prompt">
+          <span class="terminal__prompt--location">johseffer</span>
+          <span class="terminal__prompt--at">@</span>
+          <span class="terminal__prompt--hostname">t1r4x</span>
+          <span class="terminal__prompt--location">~</span>
+          <span class="terminal__prompt--bling">$ whoami</span>
         </div>
-        <span id="terminal__prompt--text" style="margin-left: 0%;">
+        <span class="terminal__prompt--text" style="margin-left: 0%;">
           I'm an brazilian IT consultant.
           <br>Skilled with .NET, python, javascript, and node.
           <br>Using <a style="color: white;" href="https://www.kali.org/">Kali Linux</a>, <a style="color: white;"
             href="https://www.kali.org/">Windows</a> and <a style="color: white;" href="https://www.kali.org/">MacOS</a>
           <br> I'm also an IOT and hacking enthusiast.
         </span>
-        <div id="terminal__prompt">
-          <span id="terminal__prompt--location">johseffer</span>
-          <span id="terminal__prompt--at">@</span>
-          <span id="terminal__prompt--hostname">t1r4x</span>
-          <span id="terminal__prompt--location">~</span>
-          <span id="terminal__prompt--bling">$ ls</span>
+        <div class="terminal__prompt">
+          <span class="terminal__prompt--location">johseffer</span>
+          <span class="terminal__prompt--at">@</span>
+          <span class="terminal__prompt--hostname">t1r4x</span>
+          <span class="terminal__prompt--location">~</span>
+          <span class="terminal__prompt--bling">$ ls</span>
         </div>
-        <span id="terminal__prompt--text" style="margin-left: 0%; color: #3465A4;">&nbsp;<a href="portifolio/index.html"
-            style="color: #3465A4;"><b>Portifolio</b></a>&nbsp;&nbsp;&nbsp;<a href="./AboutME/index.html"
-            style="color: #3465A4;"><b>AboutMe</b></a>&nbsp;&nbsp;&nbsp;<a href="./Miscellaneous/index.html"
-            style="color: #3465A4;"><b>Miscellaneous</b></a>&nbsp;&nbsp;&nbsp;<a href="./README.html"
-            style="color: white;"><b>README.md</b></a></span>
-        <div id="terminal__prompt">
-          <span id="terminal__prompt--location">johseffer</span>
-          <span id="terminal__prompt--at">@</span>
-          <span id="terminal__prompt--hostname">t1r4x</span>
-          <span id="terminal__prompt--location">~</span>
-          <span id="terminal__prompt--bling">$ </span>
-          <span id="terminal__prompt--cursor"></span>
+        <span class="terminal__prompt--text" style="margin-left: 0%; color: #3465A4;">&nbsp;<a
+            href="portifolio/index.html" style="color: #3465A4;"><b>Portifolio</b></a>&nbsp;&nbsp;&nbsp;<a
+            href="./AboutME/index.html" style="color: #3465A4;"><b>AboutMe</b></a>&nbsp;&nbsp;&nbsp;<a
+            href="./Miscellaneous/index.html" style="color: #3465A4;"><b>Miscellaneous</b></a>&nbsp;&nbsp;&nbsp;<a
+            href="./README.html" style="color: white;"><b>README.md</b></a></span>
+        <div class="terminal__prompt">
+          <span class="terminal__prompt--location">johseffer</span>
+          <span class="terminal__prompt--at">@</span>
+          <span class="terminal__prompt--hostname">t1r4x</span>
+          <span class="terminal__prompt--location">~</span>
+          <span class="terminal__prompt--bling">$ </span>
+          <span class="terminal__prompt--cursor"></span>
         </div>
       </section>
+      <script>
+        // Make the DIV element draggable:
+        var scriptTag = document.getElementsByTagName('script');
+        scriptTag = scriptTag[scriptTag.length - 1];
+        var parentTag = scriptTag.parentNode;
+        dragElement(parentTag);
+
+        function dragElement(elmnt) {
+          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+          if (elmnt.getElementsByClassName(elmnt.id + "__bar").length > 0) {
+            // if present, the header is where you move the DIV from:
+            elmnt.getElementsByClassName(elmnt.id + "__bar")[0].onmousedown = dragMouseDown;
+          } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+          }
+
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+          }
+
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+          }
+
+          function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+      </script>
     </div>
 
     <div id="dockContainer" style="bottom: 0%;">

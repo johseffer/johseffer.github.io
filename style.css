@@ -105,14 +105,23 @@ body {
   padding: 8px;
 }
 
-#terminal {
+.terminal {
+  position: absolute;
+  z-index: 9;
+  min-height: 10vh;
+  min-width: 10vw;
   width: 56vw;
   height: 56vh;
-  margin-top: -16vh;
+  resize: both;
+  overflow: hidden;
+  max-height: 100vh;
+  max-width: 100vw;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#terminal__bar {
+.terminal__bar {
+  cursor: move;
+  z-index: 10;
   display: flex;
   width: 100%;
   height: 30px;
@@ -162,7 +171,7 @@ body {
   line-height: 15px;
 }
 
-#terminal__body {
+.terminal__body {
   background: rgba(56, 56, 56, 0.9);
   /* font-family: 'Fira Mono'; */
   font-size: 14px;
@@ -171,36 +180,36 @@ body {
   margin-top: -1px;
 }
 
-#terminal__prompt {
+.terminal__prompt {
   display: flex;
   margin-top: 10px;
 }
-#terminal__prompt--user {
+.terminal__prompt--user {
   color: #7eda28;
 }
-#terminal__prompt--at {
+.terminal__prompt--at {
   color: #595953;
 }
-#terminal__prompt--hostname {
+.terminal__prompt--hostname {
   color: mediumorchid;
 }
-#terminal__prompt--location {
+.terminal__prompt--location {
   color: #4878c0;
 }
-#terminal__prompt--bling {
+.terminal__prompt--bling {
   color: #dddddd;
 }
-#terminal__prompt--text {
+.terminal__prompt--text {
   color: #ffffff;
 }
-#terminal__prompt--cursor {
+.terminal__prompt--cursor {
   display: block;
   height: 17px;
   width: 8px;
   margin-left: 9px;
   animation: blink 1200ms linear infinite;
 }
-#terminal__prompt--header {
+.terminal__prompt--header {
   background-color: #dddddd;
 }
 
@@ -223,7 +232,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  #terminal {
+  .terminal {
     max-height: 90%;
     width: 90%;
   }
