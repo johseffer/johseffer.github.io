@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
 
 body {
-/*  background: linear-gradient(45deg, #57003f 0%,#f57453 100%);*/
+  /*  background: linear-gradient(45deg, #57003f 0%,#f57453 100%);*/
   background: url(img/kali.jpg);
   font-family: Ubuntu;
   background-position: center center;
@@ -10,7 +10,91 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow: hidden;
-/*  background-color: #de4c12;*/ 
+  margin: 0;
+  /*  background-color: #de4c12;*/
+}
+
+#fullscreen {
+  display: none;
+}
+
+#header {
+  height: 18px;
+  background-color: rgba(56, 56, 56, 0.5);
+  color: white;
+  padding: 8px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+#header__left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+#header__right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header__icon {
+  padding: 5px;
+}
+
+.header__icon:hover {
+  background-color: #3c3b37;
+}
+
+.header__icon.lg {
+  width: 24px;
+}
+
+.header__icon.md {
+  width: 24px;
+}
+
+.header__icon.sm {
+  width: 18px;
+  padding: 8px;
+}
+
+.header__icon.xm {
+  width: 12px;
+  padding: 10px;
+}
+
+.header__icon.invert {
+  filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(222deg) brightness(119%) contrast(115%);
+}
+
+#clock {
+  cursor: default;
+  margin-right: 10px;
+  padding: 8px;
+}
+
+#clock:hover {
+  cursor: default;
+  background-color: #3c3b37;
+}
+
+.vr {
+  border-left: 1px solid rgb(255, 255, 255);
+  height: 20px;
+  margin: 0 10px;
+}
+
+.vr.left {
+  margin-left: 20px;
+}
+
+.vr.right {
+  margin-right: 20px;
 }
 
 #container {
@@ -18,12 +102,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 8px;
 }
 
 #terminal {
-  width: 70vw;
-  height: 65vh;
-  box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+  width: 56vw;
+  height: 56vh;
+  margin-top: -16vh;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #terminal__bar {
@@ -35,7 +121,7 @@ body {
   box-sizing: border-box;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#504b45 0%, #3c3b37 100%);
 }
 #bar__buttons {
   display: flex;
@@ -55,8 +141,8 @@ body {
   border: none;
   border-radius: 100%;
   background: linear-gradient(#7d7871 0%, #595953 100%);
-  text-shadow: 0px 1px 0px rgba(255,255,255,0.2);
-  box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
 }
 .bar__button:hover {
   cursor: pointer;
@@ -79,7 +165,7 @@ body {
 #terminal__body {
   background: rgba(56, 56, 56, 0.9);
   /* font-family: 'Fira Mono'; */
-  font-size: 14px ;
+  font-size: 14px;
   height: calc(100% - 30px);
   padding: 15px;
   margin-top: -1px;
@@ -93,10 +179,10 @@ body {
   color: #7eda28;
 }
 #terminal__prompt--at {
-  color:#595953;
+  color: #595953;
 }
 #terminal__prompt--hostname {
-  color:mediumorchid;
+  color: mediumorchid;
 }
 #terminal__prompt--location {
   color: #4878c0;
@@ -105,7 +191,7 @@ body {
   color: #dddddd;
 }
 #terminal__prompt--text {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 #terminal__prompt--cursor {
   display: block;
@@ -117,7 +203,6 @@ body {
 #terminal__prompt--header {
   background-color: #dddddd;
 }
-
 
 @keyframes blink {
   0% {
@@ -144,165 +229,155 @@ body {
   }
 }
 
-HTML CSS 
-
-Result
-Skip Results Iframe
-
-EDIT ON
-
-
-
-div.cap {
-display: block;
-height: 100px;
-width: 40px;
-background: url(https://fivera.net/wp-content/uploads/2013/08/dock-background-fivera-net.png) bottom left no-repeat;
+HTML CSS Result Skip Results Iframe EDIT ON div.cap {
+  display: block;
+  height: 100px;
+  width: 40px;
+  background: url(https://fivera.net/wp-content/uploads/2013/08/dock-background-fivera-net.png) bottom left no-repeat;
 }
 
 div.cap.left {
-position: absolute;
-bottom: 0px;
-left: 0px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
 
 div.cap.right {
-background-position: right bottom;
-position: absolute;
-top: 0px;
-right: 0px;
+  background-position: right bottom;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 ul.osx-dock {
-display: inline-block;
-height: 130px;
-padding: 0 40px 0 0;
-background: url(https://fivera.net/wp-content/uploads/2013/08/dock-background-fivera-net.png) no-repeat right bottom;
-overflow: hidden;
-margin: 0 0 0 40px;
+  display: inline-block;
+  height: 130px;
+  padding: 0 40px 0 0;
+  background: url(https://fivera.net/wp-content/uploads/2013/08/dock-background-fivera-net.png) no-repeat right bottom;
+  overflow: hidden;
+  margin: 0 0 0 40px;
 }
 
 ul.osx-dock li {
-display: block;
-position: relative;
-float: left;
-width: 50px;
-height: 50px;
-margin: 60px 0 4px 0;
+  display: block;
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 60px 0 4px 0;
 
--webkit-transition: 0.15s linear;
--moz-transition: 0.15s linear;
--o-transition: 0.15s linear;
--ms-transition: 0.15s linear;
-transition: 0.15s linear;
+  -webkit-transition: 0.15s linear;
+  -moz-transition: 0.15s linear;
+  -o-transition: 0.15s linear;
+  -ms-transition: 0.15s linear;
+  transition: 0.15s linear;
 
--webkit-transition-property: -webkit-transform margin;
--moz-transition-property: -moz-transform margin;
--o-transition-property: -o-transform margin;
--ms-transition-property: -ms-transform margin;
-transition-property: transform margin;
-text-align: center;
+  -webkit-transition-property: -webkit-transform margin;
+  -moz-transition-property: -moz-transform margin;
+  -o-transition-property: -o-transform margin;
+  -ms-transition-property: -ms-transform margin;
+  transition-property: transform margin;
+  text-align: center;
 }
 
 ul.osx-dock li a {
-display: block;
-height: 50px;
-padding: 0 1px;
+  display: block;
+  height: 50px;
+  padding: 0 1px;
 
--webkit-transition: 0.15s linear;
--moz-transition: 0.15s linear;
--o-transition: 0.15s linear;
--ms-transition: 0.15s linear;
-transition: 0.15s linear;
+  -webkit-transition: 0.15s linear;
+  -moz-transition: 0.15s linear;
+  -o-transition: 0.15s linear;
+  -ms-transition: 0.15s linear;
+  transition: 0.15s linear;
 
--webkit-transition-property: -webkit-transform margin;
--moz-transition-property: -moz-transform margin;
--o-transition-property: -o-transform margin;
--ms-transition-property: -ms-transform margin;
-transition-property: transform margin;
-margin: 0;
--webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
+  -webkit-transition-property: -webkit-transform margin;
+  -moz-transition-property: -moz-transform margin;
+  -o-transition-property: -o-transform margin;
+  -ms-transition-property: -ms-transform margin;
+  transition-property: transform margin;
+  margin: 0;
+  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
 }
 
 ul.osx-dock li a img {
-width: 48px;
+  width: 48px;
 }
 
 ul.osx-dock li:hover {
-margin-left: 9px;
-margin-right: 9px;
-z-index: 200;
+  margin-left: 9px;
+  margin-right: 9px;
+  z-index: 200;
 }
 
 ul.osx-dock li:hover a {
--webkit-transform-origin: center bottom;
--moz-transform-origin: center bottom;
--o-transform-origin: center bottom;
--ms-transform-origin: center bottom;
-transform-origin: center bottom;
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
 
--webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--o-transform: scale(1.5);
--ms-transform: scale(1.5);
-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 ul.osx-dock li.nearby {
-margin-left: 6px;
-margin-right: 6px;
-z-index: 100;
+  margin-left: 6px;
+  margin-right: 6px;
+  z-index: 100;
 }
 
 ul.osx-dock li.nearby a {
--webkit-transform-origin: center bottom;
--moz-transform-origin: center bottom;
--o-transform-origin: center bottom;
--ms-transform-origin: center bottom;
-transform-origin: center bottom;
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
 
--webkit-transform: scale(1.25);
--moz-transform: scale(1.25);
--o-transform: scale(1.25);
--ms-transform: scale(1.25);
-transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 ul.osx-dock li span {
-background: rgba(0,0,0,0.75);
-position: absolute;
-bottom: 80px;
-margin: 0 auto;
-display: none;
-width: auto;
-font-size: 11px;
-font-weight: bold;
-padding: 3px 6px;
-border-radius: 6px;
-color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  bottom: 80px;
+  margin: 0 auto;
+  display: none;
+  width: auto;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: #fff;
 }
 
 ul.osx-dock li:hover span {
-display: block;
+  display: block;
 }
 
 div#dockContainer {
-position: fixed;
-bottom: 65px;
-height: 120px;
-padding: 50px 0 0;
-text-align: center;
-border-radius: 6px;
-width: 100%;
-line-height: 1;
-z-index: 100;
+  position: fixed;
+  bottom: 65px;
+  height: 120px;
+  padding: 50px 0 0;
+  text-align: center;
+  border-radius: 6px;
+  width: 100%;
+  line-height: 1;
+  z-index: 100;
 }
 
 div#dockWrapper {
-width: auto;
-display: inline-block;
-position: relative;
-border-bottom: solid 2px rgba(255,255,255,.35);
-line-height: 0;
+  width: auto;
+  display: inline-block;
+  position: relative;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.35);
+  line-height: 0;
 }
-
