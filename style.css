@@ -40,6 +40,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-right: 3px;
 }
 
 .header__current_workspace {
@@ -72,6 +73,9 @@ body {
   align-items: center;
   padding: 0 10px;
   font-size: 8pt;
+  height: 30px;
+  white-space: nowrap;
+  padding-right: 5px;
 }
 
 .header__opened_window:hover {
@@ -434,6 +438,15 @@ div#dockWrapper {
 }
 
 @media screen and (max-width: 400px) {
+  .vr {
+    height: 10px;
+    margin: 0 5px;
+  }
+
+  .header__icon {
+    padding: 3px !important;
+  }
+
   .header__icon.lg {
     width: 8px;
   }
@@ -458,12 +471,24 @@ div#dockWrapper {
     font-size: 4pt;
   }
 
+  .header__opened_window {
+    padding: 0 10px;
+  }
+
   #clock {
     font-size: 4pt;
   }
 
   .dock-icon {
-    width: 36px;
+    width: 28px;
+  }
+
+  ul.osx-dock li {
+    width: 38px;
+  }
+
+  .terminal__body {
+    font-size: 12px;
   }
 }
 
